@@ -273,7 +273,7 @@
 <body>
     <div class="container">
         <h1 class="page-title romantic-font text-center" style="font-size: 4rem; color: #ff357b;">
-            My Heart Shweta 💓 Only For You <span class="heartbeat" style="display: inline-block;">❤️</span>
+            My Heart Beats Only For You <span class="heartbeat" style="display: inline-block;">❤️</span>
         </h1>
         
         <div class="message-card glass-effect">
@@ -301,7 +301,7 @@
             <div class="gif-card glass-effect">
                 <img src="https://practiceop.github.io/soooryy/cry6.jpg" alt="Cute GIF" />
                 <div class="gif-caption">
-                    <p class="romantic-font" style="font-size: 1.8rem; color: #e84a7f;">Please come back to me SHWETA 💖</p>
+                    <p class="romantic-font" style="font-size: 1.8rem; color: #e84a7f;">Please come back to me... 💖</p>
                 </div>
             </div>
         </div>
@@ -326,7 +326,7 @@
         
         <div class="btn-container">
             <button class="btn btn-yes" onclick="showLoveLetter()" <a href="Cute Pookie Hug.html">
-                Yes, I Forgive You Ashwin 💖
+                Yes, I Forgive You! 💖
             </button>
             <button class="btn btn-no" onclick="showCryingEmojis()">
                 Not Yet... 😢
@@ -385,28 +385,34 @@
         }
         
         // Show love letter
-        function showLoveLetter() {
-            const letter = document.getElementById('loveLetter');
-            letter.classList.remove('hidden');
-            
+      function showLoveLetter() {
+    const letter = document.getElementById('loveLetter');
+    letter.classList.remove('hidden');
+
+    setTimeout(() => {
+        letter.classList.add('show');
+
+        // Floating hearts animation
+        for(let i = 0; i < 50; i++) {
             setTimeout(() => {
-                letter.classList.add('show');
-                
-                // Create floating hearts animation
-                for(let i = 0; i < 50; i++) {
-                    setTimeout(() => {
-                        createFloatingHeart();
-                    }, i * 100);
-                }
-            }, 100);
-            
-            // Add subtle movement to GIF cards
-            const gifCards = document.querySelectorAll('.gif-card');
-            gifCards.forEach(card => {
-                card.style.transform = 'translateY(-10px)';
-                card.style.boxShadow = '0 15px 35px rgba(255, 105, 180, 0.4)';
-            });
+                createFloatingHeart();
+            }, i * 100);
         }
+
+        
+        setTimeout(() => {
+            window.location.href = 'Cute Pookie Hug.html';
+        },6000);
+
+    }, 100);
+
+    // Animate gif cards
+    const gifCards = document.querySelectorAll('.gif-card');
+    gifCards.forEach(card => {
+        card.style.transform = 'translateY(-10px)';
+        card.style.boxShadow = '0 15px 35px rgba(255, 105, 180, 0.4)';
+    });
+}
         
         function createFloatingHeart() {
             const heart = document.createElement('div');
